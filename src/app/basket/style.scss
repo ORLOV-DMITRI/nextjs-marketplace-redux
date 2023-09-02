@@ -1,15 +1,21 @@
-.basket {
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 30px;
-  }
+.basket-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 40px;
+  grid-template-areas: "products pay";
 
-  &__title {
-    font-size: 44px;
-    font-weight: 700;
-    line-height: 150%;
-    color: #414141;
-    margin: 40px 0;
+  &__products {
+    grid-area: products;
+  }
+  &__pay {
+    grid-area: pay;
+  }
+}
+@media (max-width: 900px) {
+  .basket-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "products"
+      "pay";
   }
 }

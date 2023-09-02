@@ -1,3 +1,5 @@
+import { Loader } from "@/assets/ui/loader/loader";
+
 export default function Loading() {
-  return <p>Loading Data...</p>;
+  return <Loader />;
 }

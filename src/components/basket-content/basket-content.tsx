@@ -1,5 +1,6 @@
 import { BasketList } from "../basket-list/basket-list";
 import "./style.scss";
+
 export const BasketContent = () => {
   return (
     <div className="basket-content">
