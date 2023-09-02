@@ -1,4 +1,7 @@
+"use client";
 import PrimaryButton from "@/shared/ui/primary-button/primary-button";
+import { selectors } from "@/store/duck";
+import { useAppSelector } from "@/store/hooks";
 import { Metadata } from "next";
 import "./layout.scss";
 
@@ -12,6 +15,8 @@ export default function BasketLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const shoppingList = useAppSelector(selectors.basket.shoppingList);
+
   return (
     <section
       className="basket"
@@ -20,11 +25,13 @@ export default function BasketLayout({
       <div className="basket__container">
         <div className="basket__header">
           <h1 className="basket__title">Корзина</h1>
-          <div className="basket__link-pay">
-            <PrimaryButton>
-              <a href="#pay">К оформлению</a>
-            </PrimaryButton>
-          </div>
+          {shoppingList.length > 5 && (
+            <div className="basket__link-pay">
+              <PrimaryButton>
+                <a href="#pay">К оформлению</a>
+              </PrimaryButton>
+            </div>
+          )}
         </div>
 
         {children}
