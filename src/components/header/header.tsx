@@ -39,7 +39,7 @@ export const Header = () => {
 
           {route === "/" && <LinkBasket className="header__basket" />}
           {route === "/basket" && (
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div className="header__options">
               <div className="basket__balance">
                 <AccountBalance />
               </div>
