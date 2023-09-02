@@ -30,17 +30,30 @@ export const Header = () => {
               width={50}
               height={50}
               priority
+              className="header__img"
             />
-            <h1>
+            <h1 className="header__title">
               <span className="logo-highlight">M</span>arketplace
             </h1>
           </Link>
 
           {route === "/" && <LinkBasket className="header__basket" />}
-          {route === "/basket" && <AccountBalance text="Пополнить баланс" />}
+          {route === "/basket" && (
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div className="basket__balance">
+                <AccountBalance />
+              </div>
+              <Link href={"/bank"}>
+                <p className="header__balance-link">Пополнить баланс</p>
+              </Link>{" "}
+            </div>
+          )}
           {route === "/bank" && (
             <>
-              <AccountBalance /> <LinkBasket className="header__basket" />
+              <div className="header__bank-balance">
+                <AccountBalance />
+              </div>{" "}
+              <LinkBasket className="header__basket" />
             </>
           )}
         </div>

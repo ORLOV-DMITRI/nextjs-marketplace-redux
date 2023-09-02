@@ -1,0 +1,87 @@
+.basket-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 2fr auto 0.5fr;
+  padding: 10px;
+  border-radius: 10px;
+  column-gap: 20px;
+
+  background-color: #ffff;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+
+  &__counter {
+    min-width: 120px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  &__price {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 18px;
+  }
+  &__piece {
+    font-size: 15px;
+  }
+  &__total-price {
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+  }
+  &__delete {
+    display: flex;
+    position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #ffff;
+    background-color: #ffff;
+    transition: 0.2s ease;
+    right: 0;
+  }
+  &__delete:hover {
+    background-color: #f63;
+  }
+  &__delete:active {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 1000px) {
+  .basket-card {
+    column-gap: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .basket-card {
+    padding: 7px;
+    grid-template-columns: auto 2fr auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "img info total"
+      "img info  counter";
+
+    &__img {
+      grid-area: img;
+      justify-self: center;
+    }
+    &__info {
+      grid-area: info;
+    }
+    &__counter {
+      min-width: 100px;
+      grid-area: counter;
+    }
+    &__total-price {
+      grid-area: total;
+    }
+    &__price {
+      display: none;
+    }
+    &__title {
+      font-size: 13px;
+    }
+  }
+}

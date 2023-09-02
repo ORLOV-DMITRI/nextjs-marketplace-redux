@@ -7,9 +7,34 @@
 
   &__title {
     font-size: 44px;
-    font-weight: 700;
-    line-height: 150%;
     color: #414141;
     margin: 40px 0;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__link-pay {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .basket {
+    &__link-pay {
+      display: block;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .basket {
+    &__container {
+      padding: 0 10px;
+    }
+    &__title {
+      font-size: 30px;
+      margin: 20px 0;
+    }
   }
 }

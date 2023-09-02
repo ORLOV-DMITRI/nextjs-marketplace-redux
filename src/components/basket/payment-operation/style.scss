@@ -1,0 +1,24 @@
+.error {
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+
+  font-size: 12px;
+  background-color: #d80000;
+  color: #fff;
+}
+.error-btn {
+  width: 100%;
+}
+.pay-btn {
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 12px 15px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.pay-btn:hover {
+  transform: scale(1.04);
+}
+.pay-btn:active {
+  transform: scale(1);
+}

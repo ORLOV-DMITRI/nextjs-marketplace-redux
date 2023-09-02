@@ -1,5 +1,5 @@
 import { getProducts } from "@/api/get-products";
-import ProductCatalog from "@/components/product-catalog/product-catalog";
+import ProductCatalog from "@/components/products/product-catalog/product-catalog";
 
 export default async function Home() {
   const products = await getProducts();

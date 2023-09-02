@@ -1,0 +1,26 @@
+.basket-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+
+  background-color: #fff;
+
+  &__btn:hover {
+    filter: brightness(120%);
+  }
+}
+
+@media (max-width: 576px) {
+  .basket-status {
+    &__title {
+      font-size: 18px;
+    }
+    &__descr {
+      font-size: 15px;
+    }
+  }
+}

@@ -11,8 +11,15 @@
     grid-area: pay;
   }
 }
+@media (max-width: 1000px) {
+  .basket-content {
+    column-gap: 15px;
+  }
+}
+
 @media (max-width: 900px) {
   .basket-content {
+    gap: 40px;
     grid-template-columns: 1fr;
     grid-template-areas:
       "products"

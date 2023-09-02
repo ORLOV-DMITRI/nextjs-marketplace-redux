@@ -1,4 +1,4 @@
-import { CurrencyType } from "@/components/refill-balance/refill-balance";
+import { CurrencyType } from "@/types/types";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type BankType = {
@@ -16,13 +16,13 @@ export const bankSlice = createSlice({
   reducers: {
     setDollar: (state, action: PayloadAction<number | null>) => {
       if (action.payload) {
-        state.dollar += action.payload;
+        state.dollar += Number(action.payload.toFixed(1));
       }
     },
     setCoin: (state, action: PayloadAction<number | null>) => {
       if (action.payload) {
-        state.coin += action.payload;
-        state.dollar -= action.payload;
+        state.coin += Number(action.payload.toFixed(1));
+        state.dollar -= Number(action.payload.toFixed(1));
       }
     },
     buyProducts: (

@@ -1,4 +1,5 @@
 .bank {
+  padding-bottom: 100px;
   &__container {
     max-width: 1400px;
     margin: 0 auto;
@@ -7,9 +8,59 @@
 
   &__title {
     font-size: 44px;
-    font-weight: 700;
-    line-height: 150%;
     color: #414141;
     margin: 40px 0;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__balance {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .bank {
+    &__title {
+      font-size: 25px;
+    }
+    &__balance {
+      display: block;
+    }
+    &__header {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .bank {
+    &__title {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    &__header {
+      flex-direction: column;
+
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .bank {
+    &__container {
+      padding: 0 5px;
+    }
+    &__title {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    &__header {
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
   }
 }

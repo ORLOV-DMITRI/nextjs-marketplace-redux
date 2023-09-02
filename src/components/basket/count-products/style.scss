@@ -1,0 +1,35 @@
+.counter {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 6px 12px;
+
+  background-color: #70c05b;
+  color: #ffff;
+
+  &__operation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #70c05b;
+
+    background-color: #70c05b;
+    cursor: pointer;
+  }
+  &__operation:hover {
+    opacity: 0.7;
+    scale: 1.3;
+  }
+  &__operation:active {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@media (max-width: 576px) {
+  .counter {
+    padding: 3px 9px;
+  }
+}

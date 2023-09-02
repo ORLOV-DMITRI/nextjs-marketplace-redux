@@ -11,3 +11,5 @@ export type Cart = {
   id: number;
   products: ProductType[];
 };
+
+export type CurrencyType = "$" | "Coin" | null;

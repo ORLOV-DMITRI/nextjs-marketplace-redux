@@ -1,0 +1,11 @@
+.refill {
+  display: flex;
+  margin-top: 40px;
+  gap: 40px;
+}
+@media (max-width: 576px) {
+  .refill {
+    margin-top: 20px;
+    gap: 20px;
+  }
+}

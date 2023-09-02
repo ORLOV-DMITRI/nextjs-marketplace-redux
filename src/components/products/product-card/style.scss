@@ -1,0 +1,104 @@
+.product {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+
+  background-color: #ffff;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &__img {
+    object-fit: contain;
+    width: 100%;
+  }
+
+  &__info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  &__price {
+    align-self: flex-end;
+  }
+  &__title {
+    font-size: 14px;
+    flex-grow: 1;
+  }
+  &__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__btn:hover {
+    color: #70c05b;
+    border-color: #70c05b;
+    background-color: #ffff;
+  }
+}
+
+.checked {
+  color: #70c05b !important;
+  border-color: #70c05b !important;
+  background-color: #ffff !important;
+}
+
+@media (max-width: 576px) {
+  .product {
+    width: 100%;
+    flex-direction: row;
+
+    &__img {
+      width: 25%;
+    }
+    &__info {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 0.5fr;
+      grid-template-areas:
+        "title ."
+        "price btn";
+    }
+    &__price {
+      grid-area: price;
+
+      font-size: 25px;
+    }
+    &__btn {
+      grid-area: btn;
+      justify-self: end;
+      max-height: 35px;
+      font-size: 12px;
+    }
+    &__title {
+      font-size: 16px;
+      grid-area: title;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .product {
+    &__info {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 0.5fr;
+      grid-template-areas:
+        "title title"
+        "price btn";
+    }
+    &__price {
+      font-size: 18px;
+    }
+    &__title {
+      font-size: 14px;
+    }
+    &__img {
+      align-self: center;
+      height: 25%;
+      width: 20%;
+    }
+  }
+}
