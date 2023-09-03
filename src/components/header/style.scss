@@ -48,7 +48,7 @@
     transition: 0.3s ease;
   }
   &__options {
-    display: "flex";
+    display: flex;
     align-items: center;
     gap: 20px;
   }
@@ -96,6 +96,13 @@
     &__img {
       width: 30px;
       height: 30px;
+    }
+  }
+}
+@media (min-width: 1560px) {
+  .header {
+    &__container {
+      max-width: 1440px;
     }
   }
 }
