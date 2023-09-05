@@ -34,7 +34,7 @@ export const NavItem = () => {
     <div className="nav-item" onClick={() => setIsOpen(!isOpen)}>
       <button className="nav-item__btn">
         <span>Баланс</span>
-        {isOpen ? <ArrowDown /> : <ArrowUp />}
+        {isOpen ? <ArrowUp /> : <ArrowDown />}
       </button>
       {subMenu()}
     </div>

@@ -1,3 +1,17 @@
+.home {
+  &__header {
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+  &__sort {
+    justify-self: end;
+  }
+}
+
 @media (min-width: 1560px) {
   .home__container {
     max-width: 1440px;

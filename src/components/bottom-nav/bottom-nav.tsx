@@ -11,7 +11,6 @@ import "./style.scss";
 
 export const BottomNav = () => {
   const route = usePathname();
-  console.log(route);
 
   return (
     <div className="bottom-nav">
