@@ -3,13 +3,10 @@ import { actions, selectors } from "@/store/duck";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { AccountBalance } from "../account-balance/account-balance";
-import { LinkBasket } from "../link-basket/link-basket";
+import { NavBar } from "../nav-bar/nav-bar";
 import "./style.scss";
 
 export const Header = () => {
-  const route = usePathname();
   const dispatch = useAppDispatch();
   const basketState = useAppSelector(selectors.basket.currentBuyStatus);
 
@@ -36,26 +33,7 @@ export const Header = () => {
               <span className="logo-highlight">M</span>arketplace
             </h1>
           </Link>
-
-          {route === "/" && <LinkBasket className="header__basket" />}
-          {route === "/basket" && (
-            <div className="header__options">
-              <div className="basket__balance">
-                <AccountBalance />
-              </div>
-              <Link href={"/bank"}>
-                <p className="header__balance-link">Пополнить баланс</p>
-              </Link>{" "}
-            </div>
-          )}
-          {route === "/bank" && (
-            <>
-              <div className="header__bank-balance">
-                <AccountBalance />
-              </div>{" "}
-              <LinkBasket className="header__basket" />
-            </>
-          )}
+          <NavBar />
         </div>
       </div>
     </header>

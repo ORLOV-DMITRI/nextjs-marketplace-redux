@@ -1,6 +1,8 @@
-.cart {
+.product-counter {
   position: relative;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &__indicator {
     position: absolute;
     top: -5px;
@@ -10,12 +12,12 @@
 
     font-size: 8px;
     color: #ffff;
-    background: #f63;
+    background: rgb(237, 25, 68);
   }
 }
 
 @media (max-width: 576px) {
-  .cart {
+  .product-counter {
     &__img {
       width: 35px;
       height: 35px;
@@ -28,7 +30,7 @@
   }
 }
 @media (max-width: 400px) {
-  .cart {
+  .product-counter {
     &__img {
       width: 25px;
       height: 25px;

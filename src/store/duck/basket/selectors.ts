@@ -1,12 +1,13 @@
 import { RootState } from "@/store/store";
+import { ProductType } from "@/types/types";
 
 export const selectors = {
   shoppingList: (state: RootState) => state.basket.shoppingList,
 
-  isInBasket: (state: RootState, id: string) =>
-    state.basket.shoppingList.find(
-      (productInfo) => productInfo.product.id === id,
-    ),
+  isInBasket: (state: RootState, product: ProductType) =>
+    state.basket.shoppingList
+      .map((productInfo) => productInfo.product)
+      .includes(product),
   totalPrice: (state: RootState, id: string) =>
     state.basket.shoppingList.map((productInfo) => {
       if (productInfo.product.id === id) {

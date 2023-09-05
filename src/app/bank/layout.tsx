@@ -16,7 +16,7 @@ export default function BankLayout({
     <section className="bank">
       <div className="bank__container">
         <div className="bank__header">
-          <h1 className="bank__title">Пополнение баланса</h1>
+          <h1 className="bank__title title">Пополнение баланса</h1>
           <div className="bank__balance">
             <AccountBalance />
           </div>

@@ -1,0 +1,29 @@
+.bottom-nav {
+  display: none;
+  width: 100%;
+  background-color: #ffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 5px 5px;
+
+  &__item {
+    padding: 10px 20px;
+  }
+  &__icon {
+    fill: #f63;
+  }
+}
+
+@media (max-width: 700px) {
+  .bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 576px) {
+  .bottom-nav {
+    padding: 0;
+  }
+}

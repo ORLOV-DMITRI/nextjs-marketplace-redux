@@ -11,17 +11,19 @@ import "./style.scss";
 type RefillDollarType = {
   isComplet: boolean;
   setComplet: (state: boolean) => void;
+  isLoading: boolean;
+  setLoading: (state: boolean) => void;
 };
 
 export const RefillDollar: FC<RefillDollarType> = ({
   isComplet,
   setComplet,
+  isLoading,
+  setLoading,
 }) => {
   const dispatch = useAppDispatch();
 
   const [value, setValue] = useState<number>(0);
-
-  const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(Number(event.target.value));
@@ -45,7 +47,7 @@ export const RefillDollar: FC<RefillDollarType> = ({
     }, 2000);
   };
 
-  if (loading) {
+  if (isLoading) {
     return <Loader />;
   }
   if (isComplet) {

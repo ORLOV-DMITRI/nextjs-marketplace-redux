@@ -5,8 +5,13 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <section className="main">
-      <div className="main__container">
+    <section className="home">
+      <div className="home__container">
+        <div className="home__header">
+          <div className="container">
+            <h1 className="home__title title">Каталог</h1>
+          </div>
+        </div>
         <ProductCatalog products={products} />
       </div>
     </section>

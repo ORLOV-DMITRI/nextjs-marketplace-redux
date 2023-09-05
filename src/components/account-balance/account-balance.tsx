@@ -1,6 +1,7 @@
 "use client";
 import { selectors } from "@/store/duck";
 import { useAppSelector } from "@/store/hooks";
+import Link from "next/link";
 import { FC } from "react";
 import "./style.scss";
 
@@ -16,16 +17,16 @@ export const AccountBalance: FC<AccountBalanceType> = ({
   const balance = useAppSelector(selectors.bank.getBalance);
 
   return (
-    <div className={`balance ${className}`}>
+    <div className={` ${className} balance`}>
       <h4>Баланс: </h4>
       <span className="balance__info"> {balance.dollar.toFixed(1)} $</span>
-      <span className="balance__info"> {balance.coin.toFixed(1)} Coin</span>
+      <span className="balance__info"> {balance.coin.toFixed(1)} C</span>
 
-      {/* {text && (
+      {text && (
         <Link href={"/bank"}>
           <p className="balance__link">{text}</p>
         </Link>
-      )} */}
+      )}
     </div>
   );
 };

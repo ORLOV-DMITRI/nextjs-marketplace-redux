@@ -1,4 +1,5 @@
 "use client";
+import { FavoritesIcon } from "@/shared/ui/favorites-icon/favorites-icon";
 import PrimaryButton from "@/shared/ui/primary-button/primary-button";
 import { actions, selectors } from "@/store/duck";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -16,7 +17,10 @@ const ProductCard: FC<ProductCardType> = ({ product }) => {
   const dispatch = useAppDispatch();
 
   const hasShoppingList = useAppSelector((state) =>
-    selectors.basket.isInBasket(state, product.id),
+    selectors.basket.isInBasket(state, product),
+  );
+  const hasFavoritesList = useAppSelector((state) =>
+    selectors.favorites.isInFavoritesList(state, product),
   );
 
   const handleAddingToBasket = () => {
@@ -27,14 +31,28 @@ const ProductCard: FC<ProductCardType> = ({ product }) => {
     }
   };
 
+  const handleAddingToFavorites = () => {
+    if (hasFavoritesList) {
+      dispatch(actions.favorites.removeFavoritesProduct(product.id));
+    } else {
+      dispatch(actions.favorites.setFavoritesProduct(product));
+    }
+  };
+
   return (
     <li className={`product `}>
+      <FavoritesIcon
+        isFavorite={hasFavoritesList}
+        onClick={handleAddingToFavorites}
+        className="product__favorites"
+      />
       <Image
         src={"/product1.jpg"}
         alt="Product Image"
         width={100}
         height={120}
         className="product__img"
+        priority
       />
 
       <div className="product__info">

@@ -1,0 +1,15 @@
+.favorites {
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .favorites {
+    &__container {
+      padding: 0 10px;
+    }
+  }
+}

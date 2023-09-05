@@ -1,3 +1,4 @@
+import { BottomNav } from "@/components/bottom-nav/bottom-nav";
 import { Header } from "@/components/header/header";
 import Providers from "@/providers/providers";
 import type { Metadata } from "next";
@@ -22,6 +23,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <Header />
           {children}
+          <BottomNav />
         </body>
       </html>
     </Providers>

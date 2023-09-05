@@ -32,17 +32,19 @@
     width: 100%;
   }
 }
-
+@media (max-width: 1074px) {
+  .pay-details {
+    &__balance {
+      display: flex;
+    }
+  }
+}
 @media (max-width: 900px) {
   .pay-details {
     width: 60%;
     justify-self: center;
     gap: 13px;
     padding: 14px;
-
-    &__balance {
-      display: flex;
-    }
   }
 }
 

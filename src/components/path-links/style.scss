@@ -1,0 +1,11 @@
+.route-links {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 10px;
+  padding-top: 20px;
+
+  &__current {
+    color: #5f5e5e;
+  }
+}

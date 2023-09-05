@@ -1,6 +1,6 @@
 "use client";
 import { BasketList } from "@/components/basket/basket-list/basket-list";
-import { BasketStatus } from "@/components/basket/basket-status/basket-status";
+import { PageStatuses } from "@/components/basket/page-statuses/page-statuses";
 import { PaymentDetails } from "@/components/basket/payment-details/payment-details";
 import { actions, selectors } from "@/store/duck";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -16,10 +16,10 @@ const Basket = () => {
   };
 
   if (buyStatus) {
-    return <BasketStatus mode="succes buy" onClick={resetBasketState} />;
+    return <PageStatuses mode="succes buy" onClick={resetBasketState} />;
   }
   if (shoppingList.length === 0) {
-    return <BasketStatus mode="no products" />;
+    return <PageStatuses mode="no products" page={"basket"} />;
   }
 
   return (

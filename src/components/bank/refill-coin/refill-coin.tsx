@@ -12,16 +12,23 @@ import "./style.scss";
 type RefillDollarType = {
   isComplet: boolean;
   setComplet: (state: boolean) => void;
+  isLoading: boolean;
+  setLoading: (state: boolean) => void;
 };
 
-export const RefillCoin: FC<RefillDollarType> = ({ isComplet, setComplet }) => {
+export const RefillCoin: FC<RefillDollarType> = ({
+  isComplet,
+  setComplet,
+  isLoading,
+  setLoading,
+}) => {
   const dispatch = useAppDispatch();
 
   const balance = useAppSelector(selectors.bank.getBalance);
 
   const [value, setValue] = useState<number>(0);
 
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
 
   const [checkedBalance, setIscheckedBalance] = useState<boolean>(false);
 
@@ -50,7 +57,7 @@ export const RefillCoin: FC<RefillDollarType> = ({ isComplet, setComplet }) => {
     }, 2000);
   };
 
-  if (loading) {
+  if (isLoading) {
     return <Loader />;
   }
   if (isComplet) {

@@ -6,11 +6,6 @@
     padding: 0 30px;
   }
 
-  &__title {
-    font-size: 44px;
-    color: #414141;
-    margin: 40px 0;
-  }
   &__header {
     display: flex;
     align-items: center;
@@ -37,10 +32,6 @@
 
 @media (max-width: 650px) {
   .bank {
-    &__title {
-      font-size: 20px;
-      margin: 20px 0;
-    }
     &__header {
       flex-direction: column;
 

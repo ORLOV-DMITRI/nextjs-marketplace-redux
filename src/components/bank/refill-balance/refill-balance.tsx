@@ -12,12 +12,17 @@ export const RefillBalance = () => {
 
   const [isComplet, setIsComplet] = useState<boolean>(false);
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   const hadleSetCurrencyDollar = () => {
+    if (loading) return;
     setCurrency("$");
     setIsComplet(false);
   };
 
   const hadleSetCurrencyCoin = () => {
+    if (loading) return;
+
     setCurrency("Coin");
     setIsComplet(false);
   };
@@ -40,10 +45,20 @@ export const RefillBalance = () => {
       </div>
 
       {currency === "$" && (
-        <RefillDollar isComplet={isComplet} setComplet={setIsComplet} />
+        <RefillDollar
+          isComplet={isComplet}
+          setComplet={setIsComplet}
+          isLoading={loading}
+          setLoading={setLoading}
+        />
       )}
       {currency === "Coin" && (
-        <RefillCoin isComplet={isComplet} setComplet={setIsComplet} />
+        <RefillCoin
+          isComplet={isComplet}
+          setComplet={setIsComplet}
+          isLoading={loading}
+          setLoading={setLoading}
+        />
       )}
     </>
   );

@@ -5,16 +5,18 @@ import SuccesIcon from "../../../../public/succes.svg";
 
 import "./style.scss";
 
-type BasketStatusType = {
+type PageStatusesType = {
   mode: "no products" | "succes buy";
+  page?: "basket" | "favorites";
   onClick?: () => void;
 };
 
-export const BasketStatus: FC<BasketStatusType> = ({ mode, onClick }) => {
+export const PageStatuses: FC<PageStatusesType> = ({ mode, onClick, page }) => {
   const noProducts = () => {
+    const selectPage = page === "basket" ? "корзине" : "изрбранном";
     return (
       <>
-        <h2 className="basket-status__title">В корзине пока пусто</h2>
+        <h2 className="basket-status__title">В {selectPage} пока пусто</h2>
         <p className="basket-status__descr">
           Загляните на главную, чтобы выбрать товары
         </p>

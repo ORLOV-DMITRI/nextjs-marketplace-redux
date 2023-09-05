@@ -23,48 +23,21 @@
     gap: 10px;
     align-items: center;
   }
-  &__basket {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  &__btn:hover {
-    background-color: #ffffff;
-    color: #f63;
-    border-color: #f63;
-  }
-  &__btn:active {
-    background-color: #f63;
-    color: #ffff;
-  }
-  &__balance-link {
-    padding: 2px 5px;
-
-    border: 2px solid #f63;
-    border-radius: 5px;
-
-    font-size: 16px;
-    text-align: center;
-    transition: 0.3s ease;
-  }
-  &__options {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
 }
 .logo-highlight {
   color: #f63;
 }
 
-@media (max-width: 900px) {
-  .basket__balance {
-    display: none;
+@media (max-width: 700px) {
+  .header {
+    position: relative;
   }
 }
-@media (max-width: 800px) {
-  .header__bank-balance {
-    display: none;
+@media (max-width: 600px) {
+  .header {
+    &__container {
+      padding: 0 10px 0 10px;
+    }
   }
 }
 @media (max-width: 576px) {
@@ -77,9 +50,6 @@
     }
     &__img {
       width: 40px;
-    }
-    &__balance-link {
-      font-size: 12px;
     }
   }
 }
@@ -99,6 +69,7 @@
     }
   }
 }
+
 @media (min-width: 1560px) {
   .header {
     &__container {

@@ -19,7 +19,7 @@ export default function BasketLayout({
     >
       <div className="basket__container">
         <div className="basket__header">
-          <h1 className="basket__title">Корзина</h1>
+          <h1 className="basket__title title">Корзина</h1>
           <PaymentLink />
         </div>
 

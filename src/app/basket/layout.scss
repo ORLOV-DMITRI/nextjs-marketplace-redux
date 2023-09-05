@@ -5,17 +5,15 @@
     padding: 0 30px;
   }
 
-  &__title {
-    font-size: 44px;
-    color: #414141;
-    margin: 40px 0;
-  }
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   &__link-pay {
+    display: none;
+  }
+  &__balance-link {
     display: none;
   }
 }
@@ -31,10 +29,6 @@
   .basket {
     &__container {
       padding: 0 10px;
-    }
-    &__title {
-      font-size: 30px;
-      margin: 20px 0;
     }
   }
 }
