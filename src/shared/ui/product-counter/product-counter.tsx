@@ -14,7 +14,7 @@ export const ProductCounter: FC<ProductCounterType> = ({
   className,
   children,
 }) => {
-  const selectCountedItem = () => {
+  const useSelectCountedItem = () => {
     if (type === "basket") {
       return useAppSelector((state) => state.basket.shoppingList);
     }
@@ -23,7 +23,7 @@ export const ProductCounter: FC<ProductCounterType> = ({
     }
   };
 
-  const products = selectCountedItem();
+  const products = useSelectCountedItem();
 
   const hasShopping = products?.length === 0 ? false : true;
   return (
