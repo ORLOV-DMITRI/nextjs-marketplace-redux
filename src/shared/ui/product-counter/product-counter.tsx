@@ -14,16 +14,12 @@ export const ProductCounter: FC<ProductCounterType> = ({
   className,
   children,
 }) => {
-  const useSelectCountedItem = () => {
-    if (type === "basket") {
-      return useAppSelector((state) => state.basket.shoppingList);
-    }
-    if (type === "favorites") {
-      return useAppSelector((state) => state.favorites.favoritesList);
-    }
-  };
+  const shoppingList = useAppSelector((state) => state.basket.shoppingList);
+  const favoritesList = useAppSelector(
+    (state) => state.favorites.favoritesList,
+  );
 
-  const products = useSelectCountedItem();
+  const products = type === "basket" ? shoppingList : favoritesList;
 
   const hasShopping = products?.length === 0 ? false : true;
   return (
