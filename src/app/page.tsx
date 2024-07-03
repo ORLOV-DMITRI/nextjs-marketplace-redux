@@ -3,6 +3,7 @@ import ProductCatalog from "@/components/products/product-catalog/product-catalo
 import { Sort } from "@/components/sort/sort";
 import "./style.scss";
 export default async function Home() {
+
   const products = await getProducts();
 
   return (
@@ -14,7 +15,7 @@ export default async function Home() {
             <Sort className="home__sort" />
           </div>
         </div>
-        <ProductCatalog products={products} />
+        <ProductCatalog products={products || []} />
       </div>
     </section>
   );
