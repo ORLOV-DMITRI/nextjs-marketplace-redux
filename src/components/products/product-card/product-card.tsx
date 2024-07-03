@@ -47,12 +47,14 @@ const ProductCard: FC<ProductCardType> = ({ product }) => {
         className="product__favorites"
       />
       <Image
-        src={"/product1.jpg"}
+        src={product?.thumbnail || "/product1.jpg"}
         alt="Product Image"
         width={100}
         height={120}
         className="product__img"
         priority
+        placeholder='blur'
+        blurDataURL='product1.jpg'
       />
 
       <div className="product__info">

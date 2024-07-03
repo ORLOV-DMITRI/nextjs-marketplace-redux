@@ -16,7 +16,6 @@ export default function BasketLayout({
         <div className="favorites__header">
           <h1 className="favorites__title title">Избранное</h1>
         </div>
-
         {children}
       </div>
     </section>

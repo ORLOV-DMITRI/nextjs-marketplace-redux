@@ -12,6 +12,7 @@ export const getProducts = async () => {
     product.id = v4();
     return product;
   });
+ 
 
   return products;
 };

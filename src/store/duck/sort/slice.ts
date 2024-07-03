@@ -19,7 +19,7 @@ const initialState: FavoritesState = {
     "по алфавиту А-Я",
     "по алфавиту Я-А",
   ],
-  currentSort: "без сортировки",
+  currentSort: "сначала недорогие",
 };
 
 export const sortSlice = createSlice({

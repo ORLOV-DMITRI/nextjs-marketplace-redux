@@ -20,7 +20,6 @@ export const Sort: FC<SortType> = ({ className }) => {
   const sortList = useAppSelector(selectors.sort.sortList);
 
   const currentSort = useAppSelector(selectors.sort.currentSort);
-  console.log(currentSort);
 
   const handleSelectSort = (sort: SortListType) => {
     dispatch(actions.sort.setCurrentSort(sort));
