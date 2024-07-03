@@ -11,7 +11,8 @@ type BasketListType = {
 
 export const BasketList: FC<BasketListType> = ({ className = "" }) => {
   const shoppingList = useAppSelector(selectors.basket.shoppingList);
-
+  console.log(shoppingList);
+  
   return (
     <ul className={`basket-list ${className}`}>
       {shoppingList.map((productInfo) => (

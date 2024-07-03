@@ -28,7 +28,7 @@ export const BasketCard: FC<BasketCardType> = ({ productInfo }) => {
       </button>
       <div className="basket-card__img">
         <Image
-          src={"/product1.jpg"}
+          src={product?.thumbnail || "/product1.jpg"}
           width={80}
           height={80}
           alt="Product Image"
